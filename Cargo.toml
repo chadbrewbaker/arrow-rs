@@ -29,3 +29,14 @@ members = [
 # how it is compiled within the workspace, causing the whole workspace to be compiled from scratch
 # this way, this is a stand-alone package that compiles independently of the others.
 exclude = ["arrow-pyarrow-integration-testing"]
+
+[profile.release]
+lto = 'thin'
+[profile.bench]
+lto = 'thin'
+
+# If tests consume too much memory turn on lto
+# [profile.dev]
+# lto = 'thin'
+# [profile.test]
+# lto = 'thin'
